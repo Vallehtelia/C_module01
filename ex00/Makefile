@@ -1,5 +1,5 @@
-NAME = megaphone
-SRC = megaphone.cpp
+NAME = Zombie
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJ = $(SRC:.cpp=.o)
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror
@@ -9,7 +9,7 @@ all: $(NAME)
 
 std98: FLAGS += $(EXTRA_FLAGS)
 std98: re
-	
+
 $(NAME): $(OBJ)
 	$(COMPILER) $(FLAGS) -o $@ $^
 
