@@ -1,5 +1,5 @@
 NAME = UnnecessaryViolence
-SRC = main.cpp Weapon.cpp HumanA.cpp
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ = $(SRC:.cpp=.o)
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror
