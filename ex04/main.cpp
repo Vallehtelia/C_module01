@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vvaalant <vvaalant@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/25 15:01:30 by vvaalant          #+#    #+#             */
+/*   Updated: 2024/08/25 18:00:48 by vvaalant         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
@@ -9,7 +20,7 @@ std::string ft_replace(std::string line, const std::string &to_replace, const st
 {
     size_t  start = 0;
 
-    while ((start = line.find(to_replace)) != std::string::npos)
+    while ((start = line.find(to_replace, start)) != std::string::npos && to_replace != replace_with)
     {
         line.erase(start, to_replace.length());
         line.insert(start, replace_with);
@@ -56,7 +67,7 @@ int main(int ac, char **av)
         {
             std::cout << "unable to open out file" << std::endl;
             f_in.close();
-            return (0);
+            return (1);
         }
         while (std::getline(f_in, line))
         {
